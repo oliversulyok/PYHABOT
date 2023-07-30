@@ -5,9 +5,9 @@ RUN apt-get install gcc -y
 
 RUN mkdir -p /srv/python/
 WORKDIR /srv/python/
-COPY . .
+ADD * .
 # RUN pip install --upgrade pip
 # RUN pip install discord
 RUN pip install -r requirements.txt
 
-# CMD python run.py token
+CMD python -u run.py

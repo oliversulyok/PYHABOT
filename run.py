@@ -1,5 +1,7 @@
-import dotenv
-config = dotenv.dotenv_values(".env")
+import sys
+import os
+from dotenv import dotenv_values
+config = dotenv_values("../../run/secrets/token")
 
 
 def main():
