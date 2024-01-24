@@ -10,4 +10,4 @@ ADD * .
 # RUN pip install discord
 RUN pip install -r requirements.txt
 
-CMD python -u run.py
+ENTRYPOINT ["python", "run.py"]
