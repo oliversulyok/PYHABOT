@@ -9,7 +9,7 @@ class DataBank():
             self.data = json.loads(raw)
 
     def get(self, key, default=False):
-        return self.data[key] if (self.data and key and self.data[key]) else default
+        return self.data[key] if (self.data and key and self.data.get(key)) else default
 
 
 def save(file, data={}):

@@ -1,5 +1,6 @@
 .vscode/launch.json
 **/__pycache__
 
+debug.log
 .env
 databank/*

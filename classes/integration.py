@@ -1,4 +1,5 @@
 import math
+import logging
 
 class Integration():
     name = None
@@ -6,6 +7,7 @@ class Integration():
     def __init__(self, name):
         self.name = name
         print(f"Started... with '{name}' integration!")
+        logging.info(f"Started with '{name}' integration!")
     
     def splitToChunks(self, text, size=2000):
         count  = math.ceil(len(text) / size)

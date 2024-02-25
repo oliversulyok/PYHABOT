@@ -1,6 +1,7 @@
 import discord
 from classes.integration import Integration
 from classes.pyhabot import bot
+import logging
 
 
 class Client(discord.Client):
@@ -26,7 +27,7 @@ class DiscordIntegration(Integration):
         @self.client.event
         async def on_ready():
             print(f"Invite link: https://discord.com/oauth2/authorize?client_id={self.client.user.id}&scope=bot&permissions=8")
-            
+            logging.info("Invite link generated: https://discord.com/oauth2/authorize?client_id={self.client.user.id}&scope=bot&permissions=8")
             bot.startScrapeTask()
             await self.client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="HardverApró"))
             

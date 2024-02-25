@@ -1,11 +1,12 @@
-FROM python:3.10.2-slim-bullseye
+FROM python:3.11.8-slim-bullseye
 LABEL Name=python_ph_bot Version=0.0.1
-RUN apt-get -y update
-RUN apt-get install gcc -y
+
+RUN apt-get update
+RUN apt-get install gcc python3-dev -y
 
 RUN mkdir -p /srv/python/
+ADD . /srv/python/
 WORKDIR /srv/python/
-ADD * .
 # RUN pip install --upgrade pip
 # RUN pip install discord
 RUN pip install -r requirements.txt

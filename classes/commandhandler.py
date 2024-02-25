@@ -2,6 +2,7 @@ import json
 import requests
 import classes.scraper as scraper
 import classes.pyhabot as pyhabot
+import logging
 
 def isCommand(text):
     return text and len(text) > 1 and text[0] == pyhabot.bot.prefix
@@ -36,7 +37,8 @@ async def handle(kwargs):
 
     args = text.strip().split()
     cmd  = args.pop(0)[1:]
-
+    logging.info(f"Got command: '{cmd}'")
+    logging.info(f"Got args: '{args}'")
     try:
         if cmd == "help":
             str_  = f"{pyhabot.bot.prefix}help        | Listázza az elérhető parancsokat.\n"
