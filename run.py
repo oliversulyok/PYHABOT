@@ -7,7 +7,7 @@ def main():
     logging.basicConfig(filename='debug.log', encoding='utf-8', level=logging.INFO)
     discord_token = get_docker_secret('discord-token', default='None')
     import classes.integrations.discord as DiscordIntegration
-    DiscordIntegration.init(discord_token)
+    DiscordIntegration.init("")
 
 if __name__ == "__main__":
     main()

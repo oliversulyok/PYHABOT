@@ -10,12 +10,12 @@ class Client(discord.Client):
     def __init__(self, token, integration):
         self.token       = token
         self.integration = integration
-        super().__init__()
+        intents = discord.Intents.default()
+        super().__init__(intents=intents)
 
     async def on_message(self, message):
         if not message.author.bot:
             await bot.onMessage(integration=self.integration, ctx=message, text=message.content)
-
 
 class DiscordIntegration(Integration):
     client = False
